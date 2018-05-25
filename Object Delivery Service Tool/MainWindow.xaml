@@ -7,14 +7,17 @@
         mc:Ignorable="d"
         Title="Object Delivery Service Tool" Height="450" Width="282" ResizeMode="NoResize">
     <Grid>
+        <Grid.Background>
+            <ImageBrush ImageSource="/Resources/ObjectDeliveryService_Long.png"/>
+        </Grid.Background>
         <TextBox x:Name="passwordTextBlock" IsTabStop="False" HorizontalAlignment="Center" Margin="0,0,0,44" TextWrapping="Wrap" Text="" VerticalAlignment="Bottom" FontSize="18" IsReadOnly="True" Width="260" Height="50" HorizontalContentAlignment="Center"/>
-        <Label Content="Password" HorizontalAlignment="Center" VerticalAlignment="Bottom" Margin="0, 0, 0, 100" FontSize="32" />
-        <Label x:Name="label" Content="Town Decoration:" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top"/>
-        <Label x:Name="label1" Content="Discount Percentage:" HorizontalAlignment="Left" Margin="10,41,0,0" VerticalAlignment="Top"/>
-        <Label x:Name="label2" Content="X-Acre: " HorizontalAlignment="Left" Margin="10,72,0,0" VerticalAlignment="Top"/>
-        <Label x:Name="label3" Content="Y-Acre:" HorizontalAlignment="Left" Margin="10,103,0,0" VerticalAlignment="Top"/>
-        <Label x:Name="label4" Content="Town Name:" HorizontalAlignment="Left" Margin="10,134,0,0" VerticalAlignment="Top"/>
-        <Label x:Name="label5" Content="Player Name:" HorizontalAlignment="Left" Margin="10,164,0,0" VerticalAlignment="Top"/>
+        <Image HorizontalAlignment="Left" VerticalAlignment="Bottom" Margin="10, 0, 10, 100" Width="246" Height="48" Source="/Resources/ObjectDeliveryServicePassword.png" Stretch="None"/>
+        <local:OutlinedTextBlock x:Name="label"  Text="Town Decoration:" HorizontalAlignment="Left" Margin="10,13,0,0" VerticalAlignment="Top" Fill="#FFFFD13A" StrokeThickness="3" FontSize="14" Height="22" Stroke="#FF634D1C"/>
+        <local:OutlinedTextBlock x:Name="label1" Text="Discount:" HorizontalAlignment="Left" Margin="10,45,0,0" VerticalAlignment="Top" Fill="#FFFFD13A" StrokeThickness="3" FontSize="14" Height="22" Stroke="#FF634D1C"/>
+        <local:OutlinedTextBlock x:Name="label2" Text="X-Acre: " HorizontalAlignment="Left" Margin="10,74,0,0" VerticalAlignment="Top" Fill="#FFFFD13A" StrokeThickness="3" FontSize="14" Height="22" Stroke="#FF634D1C"/>
+        <local:OutlinedTextBlock x:Name="label3" Text="Y-Acre:" HorizontalAlignment="Left" Margin="10,105,0,0" VerticalAlignment="Top" Fill="#FFFFD13A" StrokeThickness="3" FontSize="14" Height="22" Stroke="#FF634D1C"/>
+        <local:OutlinedTextBlock x:Name="label4" Text="Town Name:" HorizontalAlignment="Left" Margin="10,138,0,0" VerticalAlignment="Top" Fill="#FFFFD13A" StrokeThickness="3" FontSize="14" Height="23" Stroke="#FF634D1C"/>
+        <local:OutlinedTextBlock x:Name="label5" Text="Player Name:" HorizontalAlignment="Left" Margin="10,167,0,0" VerticalAlignment="Top" Fill="#FFFFD13A" StrokeThickness="3" FontSize="14" Height="23" Stroke="#FF634D1C"/>
         <ComboBox x:Name="decorationComboBox" TabIndex="0" HorizontalAlignment="Left" Margin="136,13,0,0" VerticalAlignment="Top" Width="120" IsEditable="False" SelectedIndex="0">
             <ComboBoxItem Content="Park Clock"/>
             <ComboBoxItem Content="Gas Lamp"/>
