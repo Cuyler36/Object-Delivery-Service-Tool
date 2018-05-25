@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Collections.Specialized;
-using System.Diagnostics;
 using System.Net;
 using System.Text;
 
@@ -39,7 +38,7 @@ namespace Object_Delivery_Service_Tool
                 int CharacterValue = i >= Input.Length ? 0x20 : Array.IndexOf(AFe_CharList, Input.Substring(i, 1));
                 if (CharacterValue < 0 || CharacterValue > 255)
                 {
-                    Debug.WriteLine(string.Format("Character [{0}] was not present in the database!", Input.Substring(i, 1)));
+                    Console.WriteLine(string.Format("Character [{0}] was not present in the database!", Input.Substring(i, 1)));
                     CharacterValue = 0x20; // Set to space for now
                 }
 
@@ -51,10 +50,15 @@ namespace Object_Delivery_Service_Tool
 
         public static string EncodeString(string Input)
         {
-            string Output = "";
-            byte[] StringData = String2ACBytes(Input);
+            if (Input.Length < 1)
+            {
+                return "";
+            }
 
-            for (int i = 0; i < StringData.Length; i++)
+            byte[] StringData = String2ACBytes(Input);
+            string Output = StringData[0].ToString();
+
+            for (int i = 1; i < StringData.Length; i++)
             {
                 Output += "c" + StringData[i];
             }
@@ -89,12 +93,10 @@ namespace Object_Delivery_Service_Tool
                         }
                     }
 
-                    Debug.WriteLine("Password:" + Password);
                     return Password;
                 }
             }
 
-            Debug.WriteLine("Failed to get a response from Nintendo's server. Result:\r\n" + Result);
             Console.WriteLine("Failed to get a response from Nintendo's server. Result:\r\n" + Result);
             return "";
         }
