@@ -10,6 +10,19 @@ namespace Object_Delivery_Service_Tool
         public MainWindow()
         {
             InitializeComponent();
+
+            decorationComboBox.SelectionChanged += (object sender, System.Windows.Controls.SelectionChangedEventArgs e) => SetDecorationPrice();
+            discountComboBox.SelectionChanged += (object sender, System.Windows.Controls.SelectionChangedEventArgs e) => SetDecorationPrice();
+        }
+
+        private void SetDecorationPrice()
+        {
+            if (decorationComboBox.SelectedIndex > -1 && decorationComboBox.SelectedIndex < 15
+                && discountComboBox.SelectedIndex > -1 && discountComboBox.SelectedIndex < 4)
+            {
+                priceLabel.Text = string.Format("{0:n0}", ObjectDeliveryService.GetPriceWithDiscount(discountComboBox.SelectedIndex * 0.1f,
+                    decorationComboBox.SelectedIndex));
+            }
         }
 
         private void confirmButton_Click(object sender, RoutedEventArgs e)

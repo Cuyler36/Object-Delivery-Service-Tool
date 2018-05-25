@@ -10,6 +10,13 @@ namespace Object_Delivery_Service_Tool
         // TODO: See if I can dump this somehow... I don't like the idea of relying upon Nintendo's servers for these kinds of things...
         private static readonly string ObjectDeliveryServiceDomain = "http://secure2.nintendo.co.jp/ngc/gaej_objcenter.cgi";
 
+        private static readonly int[] DecorationPrices = new int[15]
+        {
+            18_000, 14_000, 27_000, 28_000, 15_000,
+            18_000, 17_000, 26_000, 32_000, 19_000,
+            20_000, 24_000, 13_000, 14_000, 30_000
+        };
+
         private static readonly string[] AFe_CharList = new string[256]
         {
             "あ", "い", "う", "え", "お", "か", "き", "く", "け", "こ", "さ", "し", "す", "せ", "そ", "た",
@@ -135,6 +142,11 @@ namespace Object_Delivery_Service_Tool
             string EncodedPlayerName, string EncodedTownName)
         {
             return GetPasswordFromDomain(DiscountPercentage, ObjectType, X_Acre, Y_Acre, EncodedPlayerName, EncodedTownName); ;
+        }
+
+        public static int GetPriceWithDiscount(float Discount, int ObjectType)
+        {
+            return (int)Math.Round((DecorationPrices[ObjectType] * (1 - Discount)));
         }
     }
 }

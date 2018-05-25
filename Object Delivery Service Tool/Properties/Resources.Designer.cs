@@ -63,6 +63,16 @@ namespace Object_Delivery_Service_Tool.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        public static System.Drawing.Bitmap Bells {
+            get {
+                object obj = ResourceManager.GetObject("Bells", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         public static System.Drawing.Bitmap ObjectDeliveryService_Long {
             get {
                 object obj = ResourceManager.GetObject("ObjectDeliveryService_Long", resourceCulture);
