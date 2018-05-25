@@ -1,0 +1,60 @@
+﻿<Window x:Class="Object_Delivery_Service_Tool.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Object_Delivery_Service_Tool"
+        mc:Ignorable="d"
+        Title="Object Delivery Service Tool" Height="450" Width="282" ResizeMode="NoResize">
+    <Grid>
+        <TextBox x:Name="passwordTextBlock" HorizontalAlignment="Center" Margin="0,0,0,44" TextWrapping="Wrap" Text="" VerticalAlignment="Bottom" FontSize="18" IsReadOnly="True" Width="260" Height="50" HorizontalContentAlignment="Center"/>
+        <Label Content="Password" HorizontalAlignment="Center" VerticalAlignment="Bottom" Margin="0, 0, 0, 100" FontSize="32" />
+        <TextBox x:Name="playerNameTextBox" MaxLength="6" HorizontalAlignment="Left" Height="23" Margin="136,167,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        <TextBox x:Name="townNameTextBox" MaxLength="6" HorizontalAlignment="Left" Height="23" Margin="136,138,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        <Label x:Name="label" Content="Town Decoration:" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="label1" Content="Discount Percentage:" HorizontalAlignment="Left" Margin="10,41,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="label2" Content="X-Acre: " HorizontalAlignment="Left" Margin="10,72,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="label3" Content="Y-Acre:" HorizontalAlignment="Left" Margin="10,103,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="label4" Content="Town Name:" HorizontalAlignment="Left" Margin="10,134,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="label5" Content="Player Name:" HorizontalAlignment="Left" Margin="10,164,0,0" VerticalAlignment="Top"/>
+        <ComboBox x:Name="discountComboBox" HorizontalAlignment="Left" Margin="136,45,0,0" VerticalAlignment="Top" Width="50" IsEditable="False" SelectedIndex="0">
+            <ComboBoxItem Content="0%"/>
+            <ComboBoxItem Content="10%"/>
+            <ComboBoxItem Content="20%"/>
+            <ComboBoxItem Content="30%"/>
+        </ComboBox>
+        <ComboBox x:Name="decorationComboBox" HorizontalAlignment="Left" Margin="136,13,0,0" VerticalAlignment="Top" Width="120" IsEditable="False" SelectedIndex="0">
+            <ComboBoxItem Content="Park Clock"/>
+            <ComboBoxItem Content="Gas Lamp"/>
+            <ComboBoxItem Content="Windpump"/>
+            <ComboBoxItem Content="Flower Clock"/>
+            <ComboBoxItem Content="Heliport"/>
+            <ComboBoxItem Content="Wind Turbine"/>
+            <ComboBoxItem Content="Pipe Stack"/>
+            <ComboBoxItem Content="Stonehenge"/>
+            <ComboBoxItem Content="Egg"/>
+            <ComboBoxItem Content="Footprints"/>
+            <ComboBoxItem Content="Geoglyph"/>
+            <ComboBoxItem Content="Mushroom"/>
+            <ComboBoxItem Content="Signpost"/>
+            <ComboBoxItem Content="Well"/>
+            <ComboBoxItem Content="Fountain"/>
+        </ComboBox>
+        <ComboBox x:Name="xAcreComboBox" HorizontalAlignment="Left" Margin="136,74,0,0" VerticalAlignment="Top" Width="50" IsEditable="False" SelectedIndex="0">
+            <ComboBoxItem Content="1"/>
+            <ComboBoxItem Content="2"/>
+            <ComboBoxItem Content="3"/>
+            <ComboBoxItem Content="4"/>
+            <ComboBoxItem Content="5"/>
+        </ComboBox>
+        <ComboBox x:Name="yAcreComboBox" HorizontalAlignment="Left" Margin="136,105,0,0" VerticalAlignment="Top" Width="50" IsEditable="False" SelectedIndex="0">
+            <ComboBoxItem Content="2"/>
+            <ComboBoxItem Content="3"/>
+            <ComboBoxItem Content="4"/>
+            <ComboBoxItem Content="5"/>
+            <ComboBoxItem Content="6"/>
+        </ComboBox>
+        <Button x:Name="confirmButton" Content="Get Password" HorizontalAlignment="Left" Margin="10,215,0,0" VerticalAlignment="Top" Width="246" Click="confirmButton_Click"/>
+        <Button x:Name="copyButton" Content="Copy Password to Clipboard" HorizontalAlignment="Left" Margin="10,0,0,10" VerticalAlignment="Bottom" Width="246" Click="copyButton_Click"/>
+    </Grid>
+</Window>
