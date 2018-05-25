@@ -3,4 +3,4 @@
 # Object Delivery Service Tool
 A tool to generate Town Decoration passwords for Animal Forest e+ (どうぶつ の 森e+)
 
-![Preview](https://puu.sh/AssK2/2c24374a52.png)
+!![Preview](https://user-images.githubusercontent.com/24523422/40522961-62b6a1a0-5fa1-11e8-94ba-1076da1684d7.png)
