@@ -1,0 +1,3 @@
+[submodule "lib/PasswordLibrary"]
+	path = lib/PasswordLibrary
+	url = https://github.com/Cuyler36/Animal-Forest-e-Password-Library.git
