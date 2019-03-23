@@ -31,10 +31,9 @@ namespace Object_Delivery_Service_Tool
             int ObjectType = decorationComboBox.SelectedIndex > -1 ? decorationComboBox.SelectedIndex : 0;
             int X_Acre = xAcreComboBox.SelectedIndex > -1 ? xAcreComboBox.SelectedIndex + 1 : 1;
             int Y_Acre = yAcreComboBox.SelectedIndex > -1 ? yAcreComboBox.SelectedIndex + 2 : 2;
-            string EncodedPlayerName = ObjectDeliveryService.EncodeString(playerNameTextBox.Text);
-            string EncodedTownName = ObjectDeliveryService.EncodeString(townNameTextBox.Text);
 
-            passwordTextBlock.Text = ObjectDeliveryService.GetPasswordString(DiscountPercentage, ObjectType, X_Acre, Y_Acre, EncodedPlayerName, EncodedTownName);
+            passwordTextBlock.Text = ObjectDeliveryService.GetPasswordString(DiscountPercentage, ObjectType, X_Acre, Y_Acre,
+                playerNameTextBox.Text, townNameTextBox.Text);
         }
 
         private void copyButton_Click(object sender, RoutedEventArgs e)

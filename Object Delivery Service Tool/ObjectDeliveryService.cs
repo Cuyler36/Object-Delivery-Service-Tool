@@ -7,7 +7,6 @@ namespace Object_Delivery_Service_Tool
 {
     public static class ObjectDeliveryService
     {
-        // TODO: See if I can dump this somehow... I don't like the idea of relying upon Nintendo's servers for these kinds of things...
         private static readonly string ObjectDeliveryServiceDomain = "http://secure2.nintendo.co.jp/ngc/gaej_objcenter.cgi";
 
         private static readonly int[] DecorationPrices = new int[15]
@@ -37,6 +36,20 @@ namespace Object_Delivery_Service_Tool
             "ぞ", "だ", "ぢ", "づ", "で", "ど", "ば", "び", "ぶ", "べ", "ぼ", "ぱ", "ぴ", "ぷ", "ぺ", "ぽ"
         };
 
+        private static bool IsURLAlive(string url)
+        {
+            try
+            {
+                var request = WebRequest.Create(url);
+                request.Timeout = 1000;
+                return ((HttpWebResponse)request.GetResponse())?.StatusCode == HttpStatusCode.OK;
+            }
+            catch // If we've hit an exception it's most likely due to a timeout.
+            {
+                return false;
+            }
+        }
+
         private static byte[] String2ACBytes(string Input, int MaxLength = 6)
         {
             byte[] Output = new byte[MaxLength];
@@ -53,6 +66,16 @@ namespace Object_Delivery_Service_Tool
             }
 
             return Output;
+        }
+
+        private static string PadString(string input)
+        {
+            while (input.Length < 6)
+            {
+                input += " ";
+            }
+
+            return input;
         }
 
         public static string EncodeString(string Input)
@@ -139,9 +162,21 @@ namespace Object_Delivery_Service_Tool
         }
 
         public static string GetPasswordString(float DiscountPercentage, int ObjectType, int X_Acre, int Y_Acre,
-            string EncodedPlayerName, string EncodedTownName)
+            string PlayerName, string TownName)
         {
-            return GetPasswordFromDomain(DiscountPercentage, ObjectType, X_Acre, Y_Acre, EncodedPlayerName, EncodedTownName); ;
+            // Check if the URL is still alive. If it is, let's use it.
+            if (IsURLAlive(ObjectDeliveryServiceDomain))
+            {
+                return GetPasswordFromDomain(DiscountPercentage, ObjectType, X_Acre, Y_Acre,
+                    EncodeString(PlayerName), EncodeString(TownName));
+            }
+            else // If it isn't, fall back to the Password Library.
+            {
+                var priceString = ((int)Math.Round(DecorationPrices[ObjectType] * (1.0f - DiscountPercentage), 0)).ToString();
+
+                return PasswordLibrary.Encoder.Encoder.Encode(PasswordLibrary.CodeType.Monument, 0, PadString(TownName),
+                    PadString(PlayerName), PadString(priceString), (ushort)ObjectType, ((Y_Acre & 7) << 3) | (X_Acre & 7));
+            }
         }
 
         public static int GetPriceWithDiscount(float Discount, int ObjectType)
