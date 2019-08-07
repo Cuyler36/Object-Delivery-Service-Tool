@@ -38,7 +38,8 @@
     <ApplicationIcon>objectdeliveryservicetool_icon.ico</ApplicationIcon>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Animal Forest e+ Password Library">
+    <Reference Include="Animal Forest e+ Password Library, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
       <HintPath>..\lib\PasswordLibrary\Animal Forest e+ Password Library\bin\Release\Animal Forest e+ Password Library.dll</HintPath>
     </Reference>
     <Reference Include="System" />
