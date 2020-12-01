@@ -19,6 +19,7 @@
         <local:OutlinedTextBlock x:Name="label4" Text="Town Name:" HorizontalAlignment="Left" Margin="10,138,0,0" VerticalAlignment="Top" Fill="#FFFFD13A" StrokeThickness="3" FontSize="14" Height="23" Stroke="#FF634D1C"/>
         <local:OutlinedTextBlock x:Name="label5" Text="Player Name:" HorizontalAlignment="Left" Margin="10,167,0,0" VerticalAlignment="Top" Fill="#FFFFD13A" StrokeThickness="3" FontSize="14" Height="23" Stroke="#FF634D1C"/>
         <local:OutlinedTextBlock x:Name="priceLabel" Text="18,000" HorizontalAlignment="Left" Margin="193,45,0,0" VerticalAlignment="Top" Fill="#FFFFD13A" StrokeThickness="3" FontSize="16" Height="22" Stroke="#FF634D1C" Width="51"/>
+        <local:OutlinedTextBlock x:Name="label6" Text="English Password:" HorizontalAlignment="Left" Margin="10,196,0,0" VerticalAlignment="Top" Fill="#FFFFD13A" StrokeThickness="3" FontSize="14" Height="23" Stroke="#FF634D1C"/>
         <ComboBox x:Name="decorationComboBox" TabIndex="0" HorizontalAlignment="Left" Margin="136,13,0,0" VerticalAlignment="Top" Width="120" IsEditable="False" SelectedIndex="0">
             <ComboBoxItem Content="Park Clock"/>
             <ComboBoxItem Content="Gas Lamp"/>
@@ -58,7 +59,8 @@
         </ComboBox>
         <TextBox x:Name="townNameTextBox" TabIndex="4" MaxLength="6" HorizontalAlignment="Left" Height="23" Margin="136,138,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
         <TextBox x:Name="playerNameTextBox" TabIndex="5" MaxLength="6" HorizontalAlignment="Left" Height="23" Margin="136,167,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
-        <Button x:Name="confirmButton" Content="Get Password" TabIndex="6" HorizontalAlignment="Left" Margin="10,215,0,0" VerticalAlignment="Top" Width="246" Click="confirmButton_Click"/>
+        <CheckBox x:Name="EnglishPasswordBox" TabIndex="6" HorizontalAlignment="Left" Height="16" Margin="136,200,0,0" VerticalAlignment="Top" IsChecked="False"/>
+        <Button x:Name="confirmButton" Content="Get Password" TabIndex="6" HorizontalAlignment="Left" Margin="10,235,0,0" VerticalAlignment="Top" Width="246" Click="confirmButton_Click"/>
         <Button x:Name="copyButton" Content="Copy Password to Clipboard" TabIndex="7" HorizontalAlignment="Left" Margin="10,0,0,10" VerticalAlignment="Bottom" Width="246" Click="copyButton_Click"/>
         <Image x:Name="bellsImage" HorizontalAlignment="Left" Height="22" Margin="244,45,0,0" VerticalAlignment="Top" Width="22" Source="Resources/Bells.png"/>
     </Grid>

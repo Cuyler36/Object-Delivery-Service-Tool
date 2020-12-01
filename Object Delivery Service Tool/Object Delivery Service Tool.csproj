@@ -41,9 +41,8 @@
     <ApplicationIcon>objectdeliveryservicetool_icon.ico</ApplicationIcon>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Animal Forest e+ Password Library, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\lib\PasswordLibrary\Animal Forest e+ Password Library\bin\Release\Animal Forest e+ Password Library.dll</HintPath>
+    <Reference Include="Animal Forest e+ Password Library">
+      <HintPath>..\..\Animal Forest e+ Password Library\Animal Forest e+ Password Library\bin\Release\Animal Forest e+ Password Library.dll</HintPath>
     </Reference>
     <Reference Include="Costura, Version=4.0.0.0, Culture=neutral, PublicKeyToken=9919ef960d84173d, processorArchitecture=MSIL">
       <HintPath>..\packages\Costura.Fody.4.0.0\lib\net40\Costura.dll</HintPath>

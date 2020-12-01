@@ -162,10 +162,11 @@ namespace Object_Delivery_Service_Tool
         }
 
         public static string GetPasswordString(float DiscountPercentage, int ObjectType, int X_Acre, int Y_Acre,
-            string PlayerName, string TownName)
+            string PlayerName, string TownName, bool getEnglishPassword)
         {
             // Check if the URL is still alive. If it is, let's use it.
-            if (IsURLAlive(ObjectDeliveryServiceDomain))
+            // We *can't* use the web service if generating an english password for the translation.
+            if (!getEnglishPassword && IsURLAlive(ObjectDeliveryServiceDomain))
             {
                 return GetPasswordFromDomain(DiscountPercentage, ObjectType, X_Acre, Y_Acre,
                     EncodeString(PlayerName), EncodeString(TownName));
@@ -175,7 +176,8 @@ namespace Object_Delivery_Service_Tool
                 var priceString = ((int)Math.Round(DecorationPrices[ObjectType] * (1.0f - DiscountPercentage), 0)).ToString();
 
                 return PasswordLibrary.Encoder.Encoder.Encode(PasswordLibrary.CodeType.Monument, 0, PadString(TownName),
-                    PadString(PlayerName), PadString(priceString), (ushort)ObjectType, ((Y_Acre & 7) << 3) | (X_Acre & 7));
+                    PadString(PlayerName), PadString(priceString), (ushort)ObjectType, ((Y_Acre & 7) << 3) | (X_Acre & 7),
+                    getEnglishPassword);
             }
         }
 

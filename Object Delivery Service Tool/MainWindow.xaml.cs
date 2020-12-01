@@ -33,7 +33,7 @@ namespace Object_Delivery_Service_Tool
             int Y_Acre = yAcreComboBox.SelectedIndex > -1 ? yAcreComboBox.SelectedIndex + 2 : 2;
 
             passwordTextBlock.Text = ObjectDeliveryService.GetPasswordString(DiscountPercentage, ObjectType, X_Acre, Y_Acre,
-                playerNameTextBox.Text, townNameTextBox.Text);
+                playerNameTextBox.Text, townNameTextBox.Text, EnglishPasswordBox.IsChecked.Value);
         }
 
         private void copyButton_Click(object sender, RoutedEventArgs e)
